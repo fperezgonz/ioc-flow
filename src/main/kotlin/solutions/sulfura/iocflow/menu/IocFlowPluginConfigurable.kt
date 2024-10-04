@@ -1,14 +1,14 @@
-package solutions.sulfura.errorbuilderplugin.menu
+package solutions.sulfura.iocflow.menu
 
 import com.intellij.openapi.options.Configurable
 import javax.swing.JComponent
 
-class ErrorBuilderPluginConfigurable : Configurable {
+class IocFlowPluginConfigurable : Configurable {
 
-    private var settingsComponent: ErrorBuilderPluginSettingsComponent? = null
+    private var settingsComponent: IocFlowPluginSettingsComponent? = null
 
     override fun createComponent(): JComponent? {
-        settingsComponent = ErrorBuilderPluginSettingsComponent()
+        settingsComponent = IocFlowPluginSettingsComponent()
         return settingsComponent?.panel
     }
 
@@ -29,6 +29,6 @@ class ErrorBuilderPluginConfigurable : Configurable {
     }
 
     override fun getDisplayName(): String {
-        return "IntentionsPlugin"
+        return "IoC Flow"
     }
 }

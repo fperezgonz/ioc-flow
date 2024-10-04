@@ -1,11 +1,11 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>solutions.sulfura.error-builder-plugin</id>
+    <id>solutions.sulfura.ioc-flow</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Error Builder</name>
+    <name>IoC Flow</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor>Sulfura dev</vendor>
@@ -13,9 +13,9 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description><![CDATA[
-
-  ]]></description>
+    <description>
+        <![CDATA[Allows defining custom quickfixes that create a property of the configured type with the configured name, and sets its value on existing constructors. If there are no constructors declared it creates a new constructor that sets the property]]>
+    </description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -25,14 +25,19 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <intentionAction>
-            <language>JAVA</language> <!-- available in 2022.3 and later -->
-            <className>solutions.sulfura.errorbuilderplugin.ErrorBuilderIntention</className>
-            <category>SDK intentions</category>
-        </intentionAction>
+
+        <!-- Register the inspection tool -->
+        <localInspection language="JAVA"
+                         shortName="IocFlowInspection"
+                         displayName="Inject field"
+                         groupPath="General"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="solutions.sulfura.iocflow.IocFlowInspection"
+                         groupName="IocFlow"/>
         <applicationConfigurable
-                id="solutions.sulfura.errorbuilderplugin.menu.ErrorBuilderPluginConfigurable"
+                id="solutions.sulfura.iocflow.menu.IocFlowPluginConfigurable"
                 displayName="ErrorBuilder Configuration"
-                instance="solutions.sulfura.errorbuilderplugin.menu.ErrorBuilderPluginConfigurable"/>
+                instance="solutions.sulfura.iocflow.menu.IocFlowPluginConfigurable"/>
     </extensions>
 </idea-plugin>
