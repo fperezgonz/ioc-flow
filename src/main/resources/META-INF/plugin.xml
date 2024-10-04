@@ -30,5 +30,9 @@
             <className>solutions.sulfura.errorbuilderplugin.ErrorBuilderIntention</className>
             <category>SDK intentions</category>
         </intentionAction>
+        <applicationConfigurable
+                id="solutions.sulfura.errorbuilderplugin.menu.ErrorBuilderPluginConfigurable"
+                displayName="ErrorBuilder Configuration"
+                instance="solutions.sulfura.errorbuilderplugin.menu.ErrorBuilderPluginConfigurable"/>
     </extensions>
 </idea-plugin>
