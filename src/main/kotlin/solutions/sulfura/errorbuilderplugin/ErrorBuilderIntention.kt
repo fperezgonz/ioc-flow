@@ -24,7 +24,6 @@ public class ErrorBuilderIntention : PsiElementBaseIntentionAction(), IntentionA
 
     override fun invoke(project: Project, editor: Editor?, element: PsiElement) {
 
-        println("invoke")
         var parent: PsiElement? = element
 
         while (parent != null && parent !is PsiClass) {
