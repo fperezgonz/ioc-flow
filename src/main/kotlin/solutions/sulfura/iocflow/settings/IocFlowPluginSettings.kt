@@ -2,7 +2,7 @@ package solutions.sulfura.iocflow.settings
 
 import com.intellij.openapi.components.*
 
-@State(name = "ErrorBuilderPluginSettings", storages = [Storage("ErrorBuilderPluginSettings.xml")])
+@State(name = "IocFlowPluginSettings", storages = [Storage("IocFlowPluginSettings.xml")])
 @Service
 class IocFlowPluginSettings : PersistentStateComponent<IocFlowPluginSettings.State> {
 

@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "error-builder-plugin"
+rootProject.name = "ioc-flow-plugin"

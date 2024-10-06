@@ -37,7 +37,9 @@
                          groupName="IocFlow"/>
         <applicationConfigurable
                 id="solutions.sulfura.iocflow.settings.IocFlowPluginConfigurable"
-                displayName="ErrorBuilder Configuration"
-                instance="solutions.sulfura.iocflow.settings.IocFlowPluginConfigurable"/>
+                displayName="IoC Flow"
+                instance="solutions.sulfura.iocflow.settings.IocFlowPluginConfigurable"
+                groupId="tools"
+        />
     </extensions>
 </idea-plugin>
