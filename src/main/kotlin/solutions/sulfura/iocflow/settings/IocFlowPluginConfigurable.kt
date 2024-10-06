@@ -1,4 +1,4 @@
-package solutions.sulfura.iocflow.menu
+package solutions.sulfura.iocflow.settings
 
 import com.intellij.openapi.options.Configurable
 import javax.swing.JComponent

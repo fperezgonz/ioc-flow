@@ -5,7 +5,7 @@ import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.JavaElementVisitor
 import com.intellij.psi.PsiElementVisitor
 import com.intellij.psi.PsiErrorElement
-import solutions.sulfura.iocflow.menu.IocFlowPluginSettings
+import solutions.sulfura.iocflow.settings.IocFlowPluginSettings
 
 class IocFlowInspection : AbstractBaseJavaLocalInspectionTool() {
 
@@ -19,7 +19,7 @@ class IocFlowInspection : AbstractBaseJavaLocalInspectionTool() {
 
                         holder.registerProblem(
                             element.prevSibling,
-                            "IoC Flow usage needs to be configured",
+                            "IoC Flow intention detected",
                             IocFlowQuickFix()
                         )
 

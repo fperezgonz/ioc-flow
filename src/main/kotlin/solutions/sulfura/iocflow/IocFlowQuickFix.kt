@@ -8,7 +8,7 @@ import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiJavaFile
 import com.intellij.psi.PsiMethod
-import solutions.sulfura.iocflow.menu.IocFlowPluginSettings
+import solutions.sulfura.iocflow.settings.IocFlowPluginSettings
 
 class IocFlowQuickFix : LocalQuickFix {
 
