@@ -7,6 +7,8 @@ plugins {
 group = "solutions.sulfura"
 version = "1.0-RELEASE"
 
+apply(from = "config/settings.env.gradle.kts")
+
 repositories {
     mavenCentral()
 }
@@ -32,15 +34,17 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("232")
+        untilBuild.set("")
     }
 
     signPlugin {
         certificateChain.set(System.getenv(file("config/chain.crt").readText()))
         privateKey.set(System.getenv(file("config/private.pem").readText()))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+        password.set(project.properties.getOrDefault("PRIVATE_KEY_PASSWORD", "").toString())
     }
 
     publishPlugin {
-        token.set(System.getenv("PUBLISH_TOKEN"))
+        token.set(project.properties.getOrDefault("PUBLISH_TOKEN", "").toString())
     }
+
 }
